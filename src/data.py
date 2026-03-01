@@ -1,0 +1,1 @@
+Contenu du fichier Python pour la gestion des données

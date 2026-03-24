@@ -643,8 +643,21 @@
 
     /* ══════════════════════════════════════
        RESPONSIVE — TABLETTE (max 1024px)
+       Image de bannière plus visible + grilles
     ══════════════════════════════════════ */
     @media(max-width:1024px){
+      /* Hero tablette — image plus éclairée */
+      .hero { min-height: 54vh; background-position: 60% center; }
+      .hero::before {
+        background:
+          linear-gradient(90deg,
+            rgba(6,12,26,0.97) 0%,
+            rgba(6,12,26,0.92) 38%,
+            rgba(6,12,26,0.52) 62%,
+            rgba(6,12,26,0.08) 85%,
+            rgba(6,12,26,0) 100%),
+          radial-gradient(ellipse 55% 80% at 0% 50%, rgba(37,99,235,.12) 0%, transparent 60%);
+      }
       .container{ padding: 3rem 1.5rem; }
       .hero-left{ padding: 3rem 1.5rem 2.5rem; max-width: 100%; }
       .pres-intro{ grid-template-columns: 1fr; gap: 2rem; }
@@ -662,51 +675,83 @@
        RESPONSIVE — MOBILE (max 768px)
     ══════════════════════════════════════ */
     @media(max-width:768px){
-      /* Nav */
-      nav { padding: 0 1rem; height: 60px; }
+
+      /* ── NAV ── */
+      nav { padding: 0 1.2rem; height: 60px; }
       .nav-links, .nav-cta { display: none; }
       .logo-img { height: 30px; }
       .hamburger { display: flex; }
 
-      /* Hero overlay → plein écran vertical sur mobile */
-      .hero::before {
-        background: linear-gradient(180deg,
-          rgba(6,12,26,0.95) 0%,
-          rgba(6,12,26,0.85) 60%,
-          rgba(6,12,26,0.78) 100%);
+      /* ── HERO — image bien visible + contenu centré ── */
+      .hero {
+        min-height: 72vh;
+        background-position: 62% center;
+        background-size: cover;
       }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 5rem 1.2rem 2.5rem; max-width: 100%; }
-      .hero h1 { font-size: clamp(1.5rem, 6.5vw, 2.4rem); white-space: normal; line-height: 1.15; }
-      .hero-sub { font-size: .88rem; max-width: 100%; }
-      .hero-btns { flex-direction: column; gap: .7rem; }
-      .hero-btns a { width: 100%; text-align: center; box-sizing: border-box; }
-      .hero-metrics { gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem; padding-top: 1.25rem; }
-      .hero-metric { flex: 1 1 70px; min-width: 0; }
-      .hero-metric strong { font-size: 2.2rem; }
-      .qualiopi-hero { flex-direction: row; flex-wrap: wrap; gap: .6rem; padding: .45rem .85rem .45rem .5rem; }
-      .qualiopi-hero img { height: 48px; }
-      .qualiopi-hero-text strong { font-size: .88rem; }
-      .qualiopi-hero-text span { font-size: .75rem; }
+      .hero::before {
+        background:
+          linear-gradient(180deg,
+            rgba(6,12,26,0.78) 0%,
+            rgba(6,12,26,0.58) 35%,
+            rgba(6,12,26,0.38) 60%,
+            rgba(6,12,26,0.62) 100%),
+          radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,.18) 0%, transparent 55%);
+      }
+      .hero-left {
+        padding: 5.5rem 1.4rem 3rem;
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+      }
+      .qualiopi-hero {
+        margin: 0 auto;
+        flex-direction: row;
+        gap: .6rem;
+        padding: .45rem .9rem .45rem .55rem;
+      }
+      .qualiopi-hero img { height: 46px; }
+      .qualiopi-hero-text strong { font-size: .86rem; }
+      .qualiopi-hero-text span { font-size: .74rem; }
+      .hero h1 {
+        font-size: clamp(1.55rem, 6.5vw, 2.4rem);
+        white-space: normal;
+        line-height: 1.15;
+        text-align: center;
+      }
+      .hero-sub { font-size: .88rem; text-align: center; max-width: 92%; }
+      .hero-btns { flex-direction: column; gap: .7rem; align-items: center; }
+      .hero-btns a { width: 100%; max-width: 320px; text-align: center; box-sizing: border-box; }
+      .hero-metrics {
+        gap: 1.5rem; flex-wrap: wrap;
+        margin-top: 2rem; padding-top: 1.25rem;
+        justify-content: center;
+      }
+      .hero-metric { text-align: center; flex: 1 1 75px; min-width: 0; }
+      .hero-metric strong { font-size: 2.1rem; }
+      .hero-metric span { font-size: .78rem; }
 
-      /* Partenaires */
-      .partners { gap: .65rem; padding: .85rem 1rem; justify-content: center; flex-wrap: wrap; }
-      .partners-label { width: 100%; text-align: center; margin-bottom: .25rem; }
-      .partner-chip { padding: .35rem .6rem; }
-      .partner-chip img { height: 44px; }
+      /* ── PARTENAIRES ── */
+      .partners { gap: .6rem; padding: .85rem 1rem; justify-content: center; flex-wrap: wrap; }
+      .partners-label { width: 100%; text-align: center; margin-bottom: .15rem; }
+      .partner-chip { padding: .35rem .55rem; }
+      .partner-chip img { height: 42px; }
 
-      /* Sections — supprimer le padding horizontal de section,
-         laisser .container gérer l'espacement */
+      /* ── SECTIONS — padding + centrage des titres ── */
       section { padding-left: 0; padding-right: 0; padding-top: 3.5rem; padding-bottom: 3.5rem; }
-      .hero { padding-top: 60px; padding-bottom: 0; } /* override hero */
+      .hero { padding-top: 60px; padding-bottom: 0; }
       .stats-section { padding-top: 3rem; padding-bottom: 3rem; }
       .cta-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-      .container { padding: 2rem 1.1rem; }
+      .container { padding: 2rem 1.25rem; }
       .tag { font-size: .65rem; }
       .title { font-size: clamp(1.35rem, 5vw, 1.9rem); }
       .sub { font-size: .88rem; }
 
-      /* Grilles */
+      /* Centrage automatique des intros de section sur mobile */
+      section .container > [data-aos="fade-up"]:first-child { text-align: center; }
+      section .container > [data-aos="fade-up"]:first-child .sub { margin: 0 auto; }
+      section .container > [data-aos="fade-up"]:first-child .tag { display: inline-block; }
+
+      /* ── GRILLES ── */
       .publics-grid { grid-template-columns: 1fr; }
       .pres-grid { grid-template-columns: 1fr; }
       .parcours-grid { grid-template-columns: 1fr; }
@@ -715,44 +760,44 @@
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .stat-box { padding: 1.75rem .75rem; border-right: none; border-bottom: 1px solid var(--border); }
       .stat-box:last-child { border-bottom: none; }
-      .stat-box strong { font-size: 2rem; }
+      .stat-box strong { font-size: 1.95rem; }
       .stat-box .slabel { font-size: .82rem; }
 
-      /* Quote / Certif */
+      /* ── CITATION / CERTIF ── */
       .quote-grid, .contact-grid, .pres-intro { grid-template-columns: 1fr; gap: 1.5rem; }
       .quote-block { padding: 2rem 1.5rem; }
-      .quote-block p { font-size: clamp(1rem, 4vw, 1.4rem); }
-      .qualiopi-certif { flex-direction: column; text-align: center; align-items: center; gap: 1rem; }
+      .quote-block p { font-size: clamp(1rem, 4vw, 1.35rem); }
+      .qualiopi-certif { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
       .qualiopi-certif img { height: 56px; }
       .qualiopi-certif-text { text-align: left; }
 
-      /* Parcours */
+      /* ── PARCOURS ── */
       .parcours-price { font-size: 1.3rem; }
       .parcours-body { padding: 1.1rem 1.2rem; }
       .parcours-top { padding: 1rem 1.2rem; }
 
-      /* Contact */
+      /* ── CONTACT ── */
       .contact-head { font-size: 1.75rem; }
       .contact-btns { flex-direction: column; gap: .6rem; }
       .contact-btns a { width: 100%; text-align: center; box-sizing: border-box; }
-      .qr-box { max-width: 160px; margin: 0 auto; }
+      .qr-box { max-width: 155px; margin: 0 auto; }
       .contact-right { padding: 2rem 1.25rem; }
       .chatbot-chip { flex-direction: column; gap: .5rem; }
 
-      /* CTA final */
+      /* ── CTA FINAL ── */
       .cta-section h2 { font-size: clamp(1.45rem, 5vw, 1.9rem); }
       .cta-btns { flex-direction: column; align-items: center; gap: .7rem; }
       .cta-btns a { width: 100%; max-width: 300px; text-align: center; box-sizing: border-box; }
       .cta-contact { flex-direction: column; align-items: center; gap: .5rem; }
       .contact-chip { justify-content: center; font-size: .8rem; padding: .5rem .9rem; }
 
-      /* Footer */
+      /* ── FOOTER ── */
       .footer-inner { flex-direction: column; gap: 1.25rem; text-align: center; }
       .footer-links { justify-content: center; flex-wrap: wrap; gap: .75rem; }
       .footer-bg-logo { display: none; }
       .footer-copy { font-size: .7rem; padding: 0 .75rem; }
 
-      /* Cursor off mobile */
+      /* ── CURSOR OFF ── */
       #cursor-dot, #cursor-ring, #cursor-glow { display: none !important; }
       * { cursor: auto !important; }
     }
@@ -761,37 +806,48 @@
        RESPONSIVE — PETIT MOBILE (max 480px)
     ══════════════════════════════════════ */
     @media(max-width:480px){
-      .hero-left { padding: 4.5rem 1rem 1.75rem; }
-      .hero h1 { font-size: clamp(1.3rem, 7.5vw, 1.75rem); }
-      .hero-metrics { gap: .85rem; }
+      .hero { min-height: 80vh; background-position: 58% center; }
+      .hero::before {
+        background:
+          linear-gradient(180deg,
+            rgba(6,12,26,0.72) 0%,
+            rgba(6,12,26,0.50) 35%,
+            rgba(6,12,26,0.32) 58%,
+            rgba(6,12,26,0.60) 100%);
+      }
+      .hero-left { padding: 4.75rem 1.1rem 2.5rem; }
+      .hero h1 { font-size: clamp(1.3rem, 7.5vw, 1.8rem); }
+      .hero-metrics { gap: .9rem; }
       .hero-metric strong { font-size: 1.85rem; }
       .hero-sub { font-size: .83rem; }
-      .qualiopi-hero img { height: 42px; }
-      .qualiopi-hero-text strong { font-size: .82rem; }
+      .qualiopi-hero img { height: 40px; }
+      .qualiopi-hero-text strong { font-size: .8rem; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .stat-box strong { font-size: 1.8rem; }
-      .partner-chip img { height: 36px; }
+      .partner-chip img { height: 34px; }
       .partners { gap: .5rem; }
       .parcours-card, .outil-card, .plus-card { padding: 1.1rem; }
       .pres-card { padding: 1rem; }
       .pub-card { padding: 1.1rem; gap: .7rem; }
       .pub-icon { width: 38px; height: 38px; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
-      .contact-head { font-size: 1.45rem; }
+      .contact-head { font-size: 1.4rem; }
       .title { font-size: clamp(1.2rem, 7vw, 1.6rem); }
       .quote-block { padding: 1.5rem 1.2rem; }
+      .container { padding: 1.75rem 1.1rem; }
     }
 
     /* ══════════════════════════════════════
        RESPONSIVE — TRÈS PETIT (max 360px)
     ══════════════════════════════════════ */
     @media(max-width:360px){
-      nav { padding: 0 .75rem; }
-      .hero-left { padding: 4rem .85rem 1.5rem; }
+      nav { padding: 0 .85rem; }
+      .hero-left { padding: 4.25rem .9rem 2rem; }
       .hero h1 { font-size: 1.2rem; }
       .hero-metric strong { font-size: 1.6rem; }
-      .container { padding: 1.75rem .85rem; }
-      .stat-box strong { font-size: 1.6rem; }
+      .container { padding: 1.5rem .9rem; }
+      .stat-box strong { font-size: 1.55rem; }
       .parcours-price { font-size: 1.15rem; }
+      .qualiopi-hero img { height: 36px; }
     }
   </style>
 </head>

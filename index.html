@@ -904,7 +904,7 @@
       <a href="#contact" class="btn-ghost">Nous contacter</a>
     </div>
     <div class="hero-metrics">
-      <div class="hero-metric"><strong id="hm1" data-val="31h">0h</strong><span>Formation max.</span></div>
+      <div class="hero-metric"><strong id="hm1" data-val="100%">0%</strong><span>Finançable</span></div>
       <div class="hero-metric"><strong id="hm2" data-val="4">0</strong><span>Parcours dispo</span></div>
       <div class="hero-metric"><strong id="hm3" data-val="×3">×0</strong><span>Efficacité candidatures</span></div>
     </div>
@@ -1089,7 +1089,7 @@
       <h2 class="title">Des résultats <span class="hl">concrets et mesurables</span></h2>
     </div>
     <div class="stats-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="stat-box"><strong id="cnt1">0</strong><div class="slabel">Heures de formation</div><div class="sdesc">Parcours Alternance</div></div>
+      <div class="stat-box"><strong id="cnt1">0%</strong><div class="slabel">Certifié Qualiopi</div><div class="sdesc">CPF · OPCO · France Travail</div></div>
       <div class="stat-box"><strong>4</strong><div class="slabel">Parcours disponibles</div><div class="sdesc">Tous niveaux</div></div>
       <div class="stat-box"><strong>×3</strong><div class="slabel">Efficacité candidatures</div><div class="sdesc">Dès la fin du parcours</div></div>
       <div class="stat-box"><strong>J+7</strong><div class="slabel">Autonomie numérique</div><div class="sdesc">Gagnée dès la 1ère semaine</div></div>
@@ -1257,7 +1257,7 @@
   // Lance au chargement (les métriques sont visibles au-dessus du fold)
   window.addEventListener('load', () => {
     setTimeout(() => {
-      countUpMetric(document.getElementById('hm1'), 31, 'h', '', 0);
+      countUpMetric(document.getElementById('hm1'), 100, '%', '', 0);
       countUpMetric(document.getElementById('hm2'), 4, '', '', 300);
       countUpMetric(document.getElementById('hm3'), 3, '', '×', 600);
     }, 400);
@@ -1266,7 +1266,7 @@
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting && e.target.id === 'cnt1') {
-        let n = 0; const t = setInterval(() => { n += 1; e.target.textContent = n + 'h'; if (n >= 31) clearInterval(t); }, 50);
+        let n = 0; const t = setInterval(() => { n += 3; if (n >= 100) n = 100; e.target.textContent = n + '%'; if (n >= 100) clearInterval(t); }, 50);
         obs.unobserve(e.target);
       }
     });

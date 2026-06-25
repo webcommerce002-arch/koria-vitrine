@@ -410,6 +410,12 @@
     .parcours-body p { color: var(--muted); font-size: .85rem; line-height: 1.65; margin-bottom: 1rem; }
     .parcours-link { color: var(--cyan); font-size: .85rem; font-weight: 600; text-decoration: none; transition: gap .2s; display: inline-flex; align-items: center; gap: .3rem; }
     .parcours-link:hover { gap: .6rem; }
+    .parcours-tagline { color: var(--muted); font-size: .82rem; line-height: 1.55; margin-top: .55rem; }
+    .parcours-feats { list-style: none; margin: .1rem 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+    .parcours-feats li { position: relative; padding-left: 1.55rem; color: var(--muted); font-size: .83rem; line-height: 1.5; }
+    .parcours-feats li::before { content: '✓'; position: absolute; left: 0; top: -1px; color: var(--cyan); font-weight: 800; }
+    .parcours-meta { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.15rem; }
+    .parcours-pill { font-size: .7rem; font-weight: 600; color: var(--cyan); background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.25); padding: .28rem .62rem; border-radius: 999px; white-space: nowrap; }
 
     /* ── STATS ── */
     .stats-section {
@@ -988,34 +994,86 @@
     </div>
     <div class="parcours-grid">
       <div class="parcours-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="parcours-top"><div class="parcours-chip">4 JOURS × 6H</div><h3>Parcours Remobilisation & Emploi</h3></div>
+        <div class="parcours-top">
+          <h3>Parcours Remobilisation & Emploi</h3>
+          <p class="parcours-tagline">Le parcours complet pour reprendre confiance, structurer sa recherche et décrocher un emploi — épaulé par l'IA à chaque étape.</p>
+        </div>
         <div class="parcours-body">
-          <div class="parcours-price">1 680 € <span>NET / PARTICIPANT</span></div>
           <p><strong style="color:var(--white)">Objectifs :</strong> Mieux se connaître, valoriser son profil, optimiser ses candidatures, préparer ses entretiens et structurer sa recherche d'emploi grâce aux outils IA.</p>
+          <ul class="parcours-feats">
+            <li>Bilan personnel : forces, freins et projet professionnel clarifiés</li>
+            <li>CV, lettres et profil optimisés par l'IA pour passer les filtres</li>
+            <li>Entraînement aux entretiens avec simulations et feedback</li>
+            <li>Plan de recherche d'emploi structuré, étape par étape</li>
+          </ul>
+          <div class="parcours-meta">
+            <span class="parcours-pill">Demandeurs d'emploi</span>
+            <span class="parcours-pill">Accompagnement individuel</span>
+            <span class="parcours-pill">Finançable</span>
+          </div>
           <a href="#contact" class="parcours-link">En savoir plus →</a>
         </div>
       </div>
       <div class="parcours-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="parcours-top"><div class="parcours-chip">1 JOURNÉE – 7H</div><h3>Parcours IA & Performance Professionnelle</h3></div>
+        <div class="parcours-top">
+          <h3>Parcours IA & Performance Professionnelle</h3>
+          <p class="parcours-tagline">Intégrer l'IA dans son quotidien pro pour gagner du temps et produire mieux, sans aucune compétence technique.</p>
+        </div>
         <div class="parcours-body">
-          <div class="parcours-price">690 € <span>NET / PARTICIPANT</span></div>
           <p><strong style="color:var(--white)">Objectifs :</strong> Gagner du temps, améliorer son organisation, structurer ses idées, optimiser ses écrits professionnels et identifier des usages IA à forte valeur ajoutée.</p>
+          <ul class="parcours-feats">
+            <li>Maîtriser ChatGPT, Copilot et les outils IA du marché</li>
+            <li>Rédiger e-mails, comptes-rendus et documents bien plus vite</li>
+            <li>Structurer ses idées et automatiser les tâches répétitives</li>
+            <li>Repartir avec des prompts et méthodes prêts à l'emploi</li>
+          </ul>
+          <div class="parcours-meta">
+            <span class="parcours-pill">Salariés & indépendants</span>
+            <span class="parcours-pill">Résultats immédiats</span>
+            <span class="parcours-pill">Finançable</span>
+          </div>
           <a href="#contact" class="parcours-link">En savoir plus →</a>
         </div>
       </div>
       <div class="parcours-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="parcours-top"><div class="parcours-chip">31 HEURES</div><h3>Parcours IA & Alternance</h3></div>
+        <div class="parcours-top">
+          <h3>Parcours IA & Alternance</h3>
+          <p class="parcours-tagline">Un accompagnement long format pour monter en compétences en centre comme en entreprise, et gagner durablement en autonomie.</p>
+        </div>
         <div class="parcours-body">
-          <div class="parcours-price">2 170 € <span>NET / PARTICIPANT</span></div>
-          <p>7 ateliers de 3h + 4 classes de suivi de 1h30 + 1 bilan final.<br><strong style="color:var(--white)">Objectifs :</strong> Développer des compétences en centre de formation et en entreprise, renforcer l'autonomie et améliorer la qualité des productions.</p>
+          <p><strong style="color:var(--white)">Objectifs :</strong> Développer des compétences en centre de formation et en entreprise, renforcer l'autonomie et améliorer la qualité des productions.</p>
+          <ul class="parcours-feats">
+            <li>Ateliers pratiques rythmés par des classes de suivi</li>
+            <li>Compétences IA directement mobilisables en entreprise</li>
+            <li>Montée en autonomie et qualité des productions renforcée</li>
+            <li>Bilan final et plan de progression individualisé</li>
+          </ul>
+          <div class="parcours-meta">
+            <span class="parcours-pill">Alternants & apprenants</span>
+            <span class="parcours-pill">Suivi continu</span>
+            <span class="parcours-pill">Finançable</span>
+          </div>
           <a href="#contact" class="parcours-link">En savoir plus →</a>
         </div>
       </div>
       <div class="parcours-card" data-aos="fade-up" data-aos-delay="240">
-        <div class="parcours-top"><div class="parcours-chip">1 JOURNÉE – 7H</div><h3>Parcours Initiation à l'Intelligence Artificielle</h3></div>
+        <div class="parcours-top">
+          <h3>Parcours Initiation à l'Intelligence Artificielle</h3>
+          <p class="parcours-tagline">La porte d'entrée idéale pour comprendre l'IA et l'utiliser concrètement dès le lendemain — aucun prérequis.</p>
+        </div>
         <div class="parcours-body">
-          <div class="parcours-price">590 € <span>NET / PARTICIPANT</span></div>
           <p><strong style="color:var(--white)">Objectifs :</strong> Comprendre le fonctionnement de l'IA, découvrir les principaux outils, apprendre les bons usages et repartir avec des applications directement mobilisables.</p>
+          <ul class="parcours-feats">
+            <li>Comprendre simplement comment fonctionne l'IA</li>
+            <li>Découvrir les principaux outils et leurs usages concrets</li>
+            <li>Adopter les bons réflexes et éviter les pièges courants</li>
+            <li>Repartir avec des cas d'usage applicables immédiatement</li>
+          </ul>
+          <div class="parcours-meta">
+            <span class="parcours-pill">Débutants</span>
+            <span class="parcours-pill">Aucun prérequis</span>
+            <span class="parcours-pill">Finançable</span>
+          </div>
           <a href="#contact" class="parcours-link">En savoir plus →</a>
         </div>
       </div>

@@ -856,6 +856,27 @@
       .parcours-price { font-size: 1.15rem; }
       .qualiopi-hero img { height: 36px; }
     }
+
+    /* Règle grands écrans — CLAUDE.md §7.3bis : au-delà de 1600 px, 16px = 1vw (les rem suivent via html, px fixes convertis) */
+    @media (min-width:1600px){
+      html{font-size:1vw}
+      nav{height:4vw}
+      .hero{padding-top:4vw}
+      .logo-img{height:2.625vw}
+      .hero-left{max-width:43.75vw}
+      .hero-sub{max-width:32.5vw}
+      .container{max-width:68.75vw}
+      .sub{max-width:35vw}
+      .cta-section p{max-width:30vw}
+      .footer-inner{max-width:68.75vw}
+      .qualiopi-hero img{height:5vw;border-radius:.5vw}
+      .qualiopi-certif img{height:4.5vw;border-radius:.625vw}
+      .partner-chip img{height:5.25vw}
+      .pub-icon{width:2.875vw;height:2.875vw;border-radius:.75vw}
+      .outil-icon{width:3.125vw;height:3.125vw;border-radius:.8vw}
+      .qr-box{width:9.375vw;height:9.375vw;border-radius:.75vw}
+      .footer-logo-img{height:2.25vw}
+    }
   </style>
 </head>
 <body>
